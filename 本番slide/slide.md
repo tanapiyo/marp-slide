@@ -19,9 +19,10 @@ footer: "2025.07.05 | AI駆動開発勉強会 Women's Base"
 
 ### Cursorを使える！と思ってもらう
 #### 本日学ぶこと
-- ✅ Cursorの**主要な機能機能**を理解する
-- ✅ 自分の開発スタイルに合わせた**使い方を見つける**
-- ✅ 明日から使える**Vibe Coding**を習得する
+<!-- _class: icon-list -->
+- Cursorの**主要な機能**を理解する
+- 自分の開発スタイルに合わせた**使い方を見つける**
+- 明日から使える**Vibe Coding**を習得する
 
 <!--
 **説明者ノート：**
@@ -54,7 +55,7 @@ footer: "2025.07.05 | AI駆動開発勉強会 Women's Base"
 
 ## Cursorとは？
 
-#### 🤖 AIネイティブなコードエディタ
+#### AIネイティブなコードエディタ
 - VSCodeをベースに、**AI機能を統合**
 - コード生成・リファクタ・デバッグ・検索などを効率化できる
 - 効果的なコード検索ができる（ローカルのコードベースを読み込み、構造的にファイル・関数・クラスなどをインデックス化している）
@@ -68,7 +69,7 @@ Anysphere Inc. が開発・提供。プランはHobby（無料）、Pro（$20/�
 - AIが「追加機能」ではなく「中核」であることを説明
 -->
 ---
-
+<!-- _class: top-align -->
 ## Cursorの基本情報
 
 #### バージョン
@@ -111,7 +112,7 @@ VibeCodingにはAgentModeがおすすめ、コードの修正の効率化はTab�
 
 ## Tab補完
 
-#### 機能概要
+<!--#### 機能概要-->
 **AIが次に書くコードを予測して提案する機能**
 
 #### 使い方
@@ -119,7 +120,7 @@ VibeCodingにはAgentModeがおすすめ、コードの修正の効率化はTab�
 2. グレーの提案が表示される
 3. `Tab`キーで採用 / `Esc`で却下
 
-**💡 精度を上げるコツ：**
+**精度を上げるコツ：**
 - 変数名を分かりやすくする
 - コメントを書いてから実装
 - 型定義を明確にする
@@ -135,7 +136,7 @@ VibeCodingにはAgentModeがおすすめ、コードの修正の効率化はTab�
 
 ### 実際の動作例
 
-#### Python例
+#### Python
 ```python
 def calculate_total(items):
     # アイテムの合計金額を計算
@@ -143,7 +144,7 @@ def calculate_total(items):
     return sum(item.price * item.quantity for item in items)
 ```
 
-#### JavaScript例
+#### JavaScript
 ```javascript
 const users = await fetchUsers();
 // アクティブユーザーのみ抽出
@@ -151,12 +152,13 @@ const users = await fetchUsers();
 const activeUsers = users.filter(user => user.isActive);
 ```
 
-**🎯 ポイント：**
+---
+**ポイント：**
 - コメントがヒントになる
 - 変数名が明確だと精度UP
 - パターンを学習して提案
 
-**💡 活用シーン：**
+**活用シーン：**
 - 定型的な処理
 - エラーハンドリング
 - テストコードの生成
@@ -172,7 +174,7 @@ const activeUsers = users.filter(user => user.isActive);
 
 ### インラインコード生成
 
-#### 🔧 機能概要
+#### 機能概要
 **選択範囲の書き換えや新規コード生成を行う機能**
 
 #### できること
@@ -182,13 +184,19 @@ const activeUsers = users.filter(user => user.isActive);
 | **生成** | 新規コード作成 | 関数の実装 |
 | **変換** | 形式を変更 | Promise→async/await |
 
+---
+<!-- _class: top-align -->
+<br>
+
 #### 基本操作
 1. コード選択（または空行にカーソル）
 2. `Ctrl+K`（Mac: `Cmd+K`）
 3. 日本語で指示を入力
 4. Enter で実行
 
-**⚡ 時短テクニック：** よく使う指示は辞書登録しておく
+<br><br>
+
+**時短テクニック：** よく使う指示は辞書登録しておく
 
 <!--
 **説明者ノート：**
@@ -196,6 +204,9 @@ const activeUsers = users.filter(user => user.isActive);
 - 自然な日本語で指示できることをアピール
 -->
 ---
+
+<!-- _class: top-align -->
+<br>
 
 ## Ctrl+Kの実例 - 関数実装
 
@@ -207,6 +218,7 @@ Ctrl+K: ユーザーの年齢から世代を判定する関数を作成。
         Z世代、ミレニアル世代、X世代、ベビーブーマー世代に分類
 ```
 
+---
 #### 生成結果
 ```python
 def get_generation(age):
@@ -228,7 +240,11 @@ def get_generation(age):
         return "ベビーブーマー世代"
 ```
 
-**💡 良い指示のポイント：**
+---
+<!-- _class: top-align -->
+<br>
+
+**良い指示のポイント：**
 - 具体的な要件を含める
 - 期待する出力を明確に
 - 必要に応じて例を示す
@@ -243,6 +259,7 @@ def get_generation(age):
 ## Ctrl+Kの実例 - リファクタリング
 
 ### 既存コードの改善
+<!-- _class: top-align -->
 
 #### Before（選択してCtrl+K）
 ```javascript
@@ -256,6 +273,9 @@ if (user.age >= 18) {
 }
 return false;
 ```
+---
+<!-- _class: top-align -->
+<br>
 
 #### After
 ```javascript
@@ -272,8 +292,11 @@ if (!user.hasLicense) {
 // 車の利用可能性チェック
 return car.isAvailable;
 ```
+---
+<!-- _class: top-align -->
+<br>
 
-**🎯 リファクタリングのコツ：**
+**リファクタリングのコツ：**
 - 「読みやすく」「保守しやすく」などの指示
 - デザインパターンの適用も可能
 - パフォーマンス改善の提案も
@@ -289,7 +312,7 @@ return car.isAvailable;
 
 ### AIとの対話
 
-#### 💬 機能概要
+#### 機能概要
 **コードに関する質問や相談ができる対話型AI機能**
 
 #### 特徴
@@ -297,6 +320,7 @@ return car.isAvailable;
 - **コンテキスト保持**: 会話の流れを理解
 - **コード提案**: 実装案を提示
 
+---
 #### よくある使い方
 | 用途 | 質問例 |
 |------|--------|
@@ -304,7 +328,9 @@ return car.isAvailable;
 | 設計相談 | 「この機能の最適な実装方法は？」 |
 | 学習 | 「このコードの動作を説明して」 |
 
-**💡 効果的な質問方法：**
+<br>
+
+**効果的な質問方法：**
 - エラーメッセージは全文貼る
 - 背景や目的を説明する
 - 具体的な制約条件を伝える
@@ -315,6 +341,8 @@ return car.isAvailable;
 - 恥ずかしい質問でもOKなことを強調
 -->
 ---
+<!-- _class: top-align -->
+<br>
 
 ## Chatの実例 - エラー解決
 
@@ -326,6 +354,10 @@ return car.isAvailable;
 TypeError: Cannot read property 'map' of undefined
    at UserList.render (UserList.js:15:23)
 ```
+
+---
+<!-- _class: top-align -->
+<br>
 
 #### AIの回答
 ```markdown
@@ -345,7 +377,11 @@ TypeError: Cannot read property 'map' of undefined
 **推奨：** オプショナルチェーンが最もシンプルです。
 ```
 
-**🎯 エラー解決のコツ：**
+---
+<!-- _class: top-align -->
+<br>
+
+**エラー解決のコツ：**
 - スタックトレース全体を貼る
 - 関連コードも一緒に送る
 - 試したことを伝える
@@ -356,13 +392,21 @@ TypeError: Cannot read property 'map' of undefined
 - 初心者の「つまづき」を減らせる
 -->
 ---
+<!-- _class: top-align -->
+<br>
 
 ## @記号の活用
 
 ### コンテキストを指定
 
-#### 🎯 機能概要
+<br>
+
+#### 機能概要
 **AIに参照してほしいファイルやコードを明示的に指定する機能**
+
+---
+<!-- _class: top-align -->
+<br>
 
 #### @の種類
 | 記号 | 説明 | 使用例 |
@@ -374,9 +418,15 @@ TypeError: Cannot read property 'map' of undefined
 | `@Docs` | ドキュメント検索 | React公式ドキュメント |
 | `@Web` | Web検索 | 最新情報の取得 |
 
+<br>
+
 **使い方：** Chat内で`@`を入力して選択
 
-**💡 活用のコツ：**
+---
+<!-- _class: top-align -->
+<br>
+
+**活用のコツ：**
 - 複数ファイルの整合性チェック
 - プロジェクト全体の理解
 - 最新情報の取得
@@ -387,6 +437,8 @@ TypeError: Cannot read property 'map' of undefined
 - 特に@Codebaseは便利
 -->
 ---
+<!-- _class: top-align -->
+<br>
 
 ## @Filesの実例
 
@@ -398,6 +450,10 @@ TypeError: Cannot read property 'map' of undefined
 これらのファイルを参照して、ユーザー登録機能を実装してください。
 既存の認証システムと整合性を保つようにしてください。
 ```
+
+---
+<!-- _class: top-align -->
+<br>
 
 #### AIの対応
 ```python
@@ -419,7 +475,11 @@ async def register_user(email: str, password: str):
         # ... 実装続く
 ```
 
-**🎯 メリット：**
+---
+<!-- _class: top-align -->
+<br>
+
+**メリット：**
 - 既存コードとの一貫性
 - 車輪の再発明を防ぐ
 - チーム規約の遵守
@@ -430,6 +490,8 @@ async def register_user(email: str, password: str):
 - 大規模プロジェクトで特に有効
 -->
 ---
+<!-- _class: top-align -->
+<br>
 
 ## @Codebaseの実例
 
@@ -441,6 +503,10 @@ async def register_user(email: str, password: str):
 このプロジェクトのアーキテクチャを説明してください。
 主要なコンポーネントと、それらの関係を教えてください。
 ```
+
+---
+<!-- _class: top-align -->
+<br>
 
 #### AIの分析結果
 ```
@@ -464,7 +530,11 @@ async def register_user(email: str, password: str):
 View → Controller → Repository → Model → DB
 ```
 
-**💡 活用シーン：**
+---
+<!-- _class: top-align -->
+<br>
+
+**活用シーン：**
 - 新規参画時の理解
 - リファクタリング計画
 - ドキュメント作成
@@ -475,6 +545,8 @@ View → Controller → Repository → Model → DB
 - 新メンバーのオンボーディングに最適
 -->
 ---
+<!-- _class: top-align -->
+<br>
 
 ## @Docsの実例
 
@@ -486,6 +558,9 @@ View → Controller → Repository → Model → DB
 useEffectのクリーンアップ関数の正しい使い方を教えてください。
 メモリリークを防ぐ方法も含めて。
 ```
+
+---
+
 
 #### 回答
 ```javascript
@@ -512,7 +587,11 @@ useEffect(() => {
 }, []);
 ```
 
-**🎯 メリット：**
+---
+<!-- _class: top-align -->
+<br>
+
+**メリット：**
 - 公式ドキュメントに基づく正確な情報
 - ベストプラクティスの学習
 - 最新APIの確認
@@ -523,6 +602,8 @@ useEffect(() => {
 - 正確な情報源からの回答
 -->
 ---
+<!-- _class: top-align -->
+<br>
 
 ## @Webの実例
 
@@ -535,6 +616,7 @@ App Routerでの並列ルートの実装方法を教えてください。
 実践的な例も含めて。
 ```
 
+---
 #### 得られる情報
 ```typescript
 // Next.js 15の並列ルート実装例
@@ -559,8 +641,11 @@ export default function Layout({
   )
 }
 ```
+---
+<!-- _class: top-align -->
+<br>
 
-**💡 使いどころ：**
+**使いどころ：**
 - 最新バージョンの機能
 - トレンドの技術
 - 解決策の検索
@@ -576,7 +661,7 @@ export default function Layout({
 
 ### マルチファイル編集
 
-#### 🎨 機能概要
+#### 機能概要
 **複数ファイルを同時に作成・編集できる高度な生成機能**
 
 #### 特徴
@@ -586,11 +671,17 @@ export default function Layout({
 | **新規作成** | ファイル群を一括生成 | 機能実装が高速 |
 | **リファクタ** | 大規模な構造変更 | 安全な変更 |
 
+---
+<!-- _class: top-align -->
+<br>
+
 #### アクセス方法
 - ショートカット: `Ctrl+I`（Mac: `Cmd+I`）
 - または画面右上のComposerアイコン
 
-**🎯 使いどころ：**
+<br>
+
+**使いどころ：**
 - 新機能の実装（複数ファイル必要）
 - 大規模リファクタリング
 - テストコードの一括生成
@@ -601,6 +692,8 @@ export default function Layout({
 - デモで威力を見せる
 -->
 ---
+<!-- _class: top-align -->
+<br>
 
 ## Composerの実例
 
@@ -615,18 +708,21 @@ export default function Layout({
 - 単体テストとE2Eテスト
 ```
 
+---
 #### 生成されるファイル
 ```
-✅ api/users/profile.py      # APIエンドポイント
-✅ components/ProfileForm.tsx # Reactコンポーネント  
-✅ types/userProfile.ts      # TypeScript型定義
-✅ validators/profile.py      # バリデーションロジック
-✅ tests/test_profile.py      # APIテスト
-✅ tests/ProfileForm.test.tsx # コンポーネントテスト
-✅ e2e/profile.spec.ts       # E2Eテスト
+- api/users/profile.py      # APIエンドポイント
+- components/ProfileForm.tsx # Reactコンポーネント  
+- types/userProfile.ts      # TypeScript型定義
+- validators/profile.py      # バリデーションロジック
+- tests/test_profile.py      # APIテスト
+- tests/ProfileForm.test.tsx # コンポーネントテスト
+- e2e/profile.spec.ts       # E2Eテスト
 ```
 
-**💡 成功のコツ：**
+<br>
+
+**成功のコツ：**
 - 要件を明確に記述
 - ファイル構成を指定
 - 既存の規約を伝える
@@ -642,7 +738,7 @@ export default function Layout({
 
 ### 背景での自動処理
 
-#### 🤖 機能概要
+#### 機能概要
 **バックグラウンドでタスクを自動実行するAI機能**
 
 #### 特徴
@@ -652,20 +748,30 @@ export default function Layout({
 | **複数タスク** | 調査、修正、ドキュメント作成 | 包括的な対応 |
 | **プロジェクト理解** | 全体を把握した上で作業 | 質の高い成果 |
 
+---
+<!-- _class: top-align -->
+<br>
+
 #### 使用シーン
 - 大量のリファクタリング
 - レガシーコードの調査
 - テスト網羅性の向上
 - ドキュメントの自動生成
 
-**⚡ 新機能：** Background Agentとして実装
+<br>
+
+**新機能：** Background Agentとして実装
 
 <!--
 **説明者ノート：**
 - 「アシスタントを雇う」イメージで説明
 - 非同期で動くことの価値を強調
 -->
+
 ---
+<!-- _class: top-align -->
+<br>
+
 
 ## Agent Modeの実例
 
@@ -677,9 +783,13 @@ Agent: このプロジェクトのすべてのTypeScriptエラーを調査し、
 修正計画を立ててください。私は他の機能開発を続けます。
 ```
 
+---
+<!-- _class: top-align -->
+<br>
+
 #### Agentの作業内容
 ```
-🔍 実行中...
+実行中...
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ✓ TypeScriptエラー検出: 24件
 ✓ 影響範囲の分析: 8ファイル  
@@ -688,13 +798,17 @@ Agent: このプロジェクトのすべてのTypeScriptエラーを調査し、
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 [10分後]
-📋 修正計画レポート:
+修正計画レポート:
 - 型定義の不整合: 12件（優先度: 高）
 - null安全性: 8件（優先度: 中）
 - 未使用import: 4件（優先度: 低）
 ```
 
-**💡 活用のコツ：**
+---
+<!-- _class: top-align -->
+<br>
+
+**活用のコツ：**
 - 明確なゴールを設定
 - 進捗の確認方法を決める
 - 結果の活用方法を考える
@@ -710,7 +824,7 @@ Agent: このプロジェクトのすべてのTypeScriptエラーを調査し、
 
 ### AIの振る舞いをコントロール
 
-#### 📏 機能概要
+#### 機能概要
 **プロジェクトや個人の開発規約をAIに学習させる機能**
 
 #### Rulesの目的
@@ -720,6 +834,10 @@ Agent: このプロジェクトのすべてのTypeScriptエラーを調査し、
 | **一貫性確保** | チーム開発の統一 | レビュー負荷軽減 |
 | **個人の好み** | 自分のスタイルを反映 | 快適な開発 |
 
+---
+<!-- _class: top-align -->
+<br>
+
 #### 設定できること
 - コードスタイル（インデント、命名規則）
 - アーキテクチャパターン
@@ -727,7 +845,9 @@ Agent: このプロジェクトのすべてのTypeScriptエラーを調査し、
 - コメントの書き方
 - テストの書き方
 
-**🎯 本質：** AIを「自分専用」にカスタマイズ
+<br>
+
+**本質：** AIを「自分専用」にカスタマイズ
 
 <!--
 **説明者ノート：**
@@ -749,10 +869,12 @@ Agent: このプロジェクトのすべてのTypeScriptエラーを調査し、
 │  User Rules     │ ← 個人設定（永続的）
 └─────────────────┘
 ```
+<br>
 
 #### 優先順位
 **Custom > Project > User**
 
+---
 #### 各レベルの説明
 | レベル | 場所 | 用途 | 例 |
 |--------|------|------|-----|
@@ -760,7 +882,9 @@ Agent: このプロジェクトのすべてのTypeScriptエラーを調査し、
 | **Project** | .cursor/rules | チーム規約 | 命名規則 |
 | **Custom** | Composerで指定 | 特定タスク | 移行作業 |
 
-**💡 使い分けのコツ：**
+<br>
+
+**使い分けのコツ：**
 - 個人的な好み → User Rules
 - チーム共通 → Project Rules  
 - 一時的な作業 → Custom Rules
@@ -771,12 +895,16 @@ Agent: このプロジェクトのすべてのTypeScriptエラーを調査し、
 - 実際のファイルパスも示す
 -->
 ---
+<!-- _class: top-align -->
+<br>
 
 ## User Rulesの設定例
 
 ### 個人の好みを反映
 
 #### 設定ファイル: `~/.cursor/rules`
+
+---
 ```yaml
 # 私のコーディングスタイル
 general:
@@ -804,7 +932,11 @@ code_review:
   - テストを必ず書く
 ```
 
-**🎯 効果：**
+---
+<!-- _class: top-align -->
+<br>
+
+**効果：**
 - どのプロジェクトでも自分のスタイル
 - AIが好みを学習
 - ストレスフリーな開発
@@ -815,12 +947,16 @@ code_review:
 - 日本語で書けることをアピール
 -->
 ---
+<!-- _class: top-align -->
+<br>
 
 ## Project Rulesの実例
 
 ### チーム開発での統一
 
 #### `.cursor/rules` （プロジェクトルート）
+
+---
 ```yaml
 # チーム開発ルール
 team_conventions:
@@ -851,7 +987,11 @@ testing:
   - モックは最小限に
 ```
 
-**💡 メリット：**
+---
+<!-- _class: top-align -->
+<br>
+
+**メリット：**
 - 新メンバーもすぐに規約遵守
 - コードレビューの負荷軽減
 - 品質の自動担保
@@ -862,7 +1002,6 @@ testing:
 - チーム全体の生産性向上
 -->
 ---
-
 ## Rules実例1
 
 ### コーディング規約の徹底
@@ -885,6 +1024,7 @@ coding_standards:
     - キャメルケース使用
 ```
 
+---
 #### 適用結果
 ```python
 # AIが生成するコード
@@ -911,7 +1051,11 @@ def _validate_order(data: OrderData) -> ValidatedOrder:
     pass
 ```
 
-**🎯 ポイント：** AIが自動的に規約を守る！
+---
+<!-- _class: top-align -->
+<br>
+
+**ポイント：** AIが自動的に規約を守る！
 
 <!--
 **説明者ノート：**
@@ -944,6 +1088,7 @@ security_rules:
     - CORS設定を明示
 ```
 
+---
 #### 生成されるコード
 ```python
 from werkzeug.security import generate_password_hash
@@ -975,7 +1120,11 @@ def register_user():
     return jsonify({'token': access_token}), 201
 ```
 
-**⚠️ 効果：** セキュリティホールを作りにくい
+---
+<!-- _class: top-align -->
+<br>
+
+**効果：** セキュリティホールを作りにくい
 
 <!--
 **説明者ノート：**
@@ -983,7 +1132,6 @@ def register_user():
 - 最初から考慮されるメリット
 -->
 ---
-
 ## Rules実例3
 
 ### テストコード生成の標準化
@@ -1008,7 +1156,9 @@ testing_rules:
     - モックは最小限に
 ```
 
+---
 #### 生成されるテスト
+
 ```python
 import pytest
 from unittest.mock import Mock, patch
@@ -1034,7 +1184,12 @@ def test_calculate_discount_境界値_ゼロ割引():
     
     # Assert  
     assert result == 1000
+```
+---
+<!-- _class: top-align -->
 
+
+```python
 def test_calculate_discount_異常系_負の価格():
     # Arrange
     original_price = -100
@@ -1057,7 +1212,11 @@ def test_process_payment_外部API_モック使用(mock_api):
     mock_api.charge.assert_called_once()
 ```
 
-**💡 効果：** テストの質が自動的に向上
+---
+<!-- _class: top-align -->
+<br>
+
+**効果：** テストの質が自動的に向上
 
 <!--
 **説明者ノート：**
@@ -1090,6 +1249,7 @@ documentation_rules:
     - コード変更時に同期更新
     - 古い情報は削除
 ```
+---
 
 #### 生成されるドキュメント
 ```python
@@ -1112,7 +1272,12 @@ def fetch_user_data(
             Trueの場合、プロフィール詳細や統計情報も取得。
         timeout (float, optional): 
             タイムアウト秒数。デフォルトは30.0秒。
-    
+```
+---
+<!-- _class: top-align -->
+<br>
+
+```python    
     Returns:
         dict: ユーザー情報を含む辞書
             {
@@ -1133,7 +1298,13 @@ def fetch_user_data(
         >>> user = fetch_user_data(123)
         >>> print(user['name'])
         'John Doe'
-        
+```
+---
+<!-- _class: top-align -->
+<br>
+
+
+```python        
         >>> # 詳細情報を含める場合
         >>> user_with_details = fetch_user_data(
         ...     user_id=123,
@@ -1148,8 +1319,11 @@ def fetch_user_data(
         - キャッシュは5分間有効
     """
 ```
+---
+<!-- _class: top-align -->
+<br>
 
-**📝 メリット：** ドキュメント作成の負担が激減
+**メリット：** ドキュメント作成の負担が激減
 
 <!--
 **説明者ノート：**
@@ -1157,30 +1331,36 @@ def fetch_user_data(
 - 他の開発者にも優しいコード
 -->
 ---
-
 ## Awesome Cursor Rules
 
 ### コミュニティの知恵を活用
 
-#### 🌟 GitHubリポジトリ
+#### GitHubリポジトリ
 **https://github.com/PatrickJS/awesome-cursorrules**
 
 #### 人気のRules例
 
 | Rules名 | 内容 | おすすめ度 |
 |---------|------|------------|
-| **clean-code** | クリーンコードの原則 | ⭐⭐⭐ |
-| **react-best-practices** | React開発のベストプラクティス | ⭐⭐⭐ |
-| **python-zen** | Pythonの禅に従った開発 | ⭐⭐ |
-| **security-first** | セキュリティ重視の開発 | ⭐⭐⭐ |
-| **tdd-rules** | テスト駆動開発 | ⭐⭐ |
+| **clean-code** | クリーンコードの原則 | ★★★ |
+| **react-best-practices** | React開発のベストプラクティス | ★★★ |
+| **python-zen** | Pythonの禅に従った開発 | ★★ |
+| **security-first** | セキュリティ重視の開発 | ★★★ |
+| **tdd-rules** | テスト駆動開発 | ★★ |
+
+
+---
+<!-- _class: top-align -->
+<br>
 
 #### 使い方
 1. リポジトリから選ぶ
 2. `.cursor/rules`にコピー
 3. 必要に応じてカスタマイズ
 
-**💡 選び方のコツ：**
+<br>
+
+**選び方のコツ：**
 - スター数とメンテナンス状況を確認
 - 自分の技術スタックに合うものを選ぶ
 - まずは1つから始める
@@ -1191,27 +1371,37 @@ def fetch_user_data(
 - 車輪の再発明を避けられる
 -->
 ---
+<!-- _class: top-align -->
+<br>
 
 ## Rulesのベストプラクティス
 
 ### 効果的なRules設定のコツ
 
-#### ✅ DO - 推奨事項
+<br>
+
+#### DO - 推奨事項
 | 項目 | 説明 | 例 |
 |------|------|-----|
-| **具体的に書く** | 曖昧な表現を避ける | ❌「良いコード」<br>✅「関数は20行以内」 |
+| **具体的に書く** | 曖昧な表現を避ける | ×「良いコード」<br>◯「関数は20行以内」 |
 | **段階的に導入** | 少しずつ増やす | 最初は3-5個のルール |
 | **チームで議論** | 合意形成が重要 | 定例でルール見直し |
 | **定期的に見直し** | プロジェクトに合わせて更新 | 3ヶ月ごとに棚卸し |
 
-#### ❌ DON'T - 避けるべきこと
+---
+<!-- _class: top-align -->
+<br>
+
+#### DON'T - 避けるべきこと
 | 項目 | 理由 | 改善策 |
 |------|------|---------|
 | **抽象的すぎる指示** | AIが解釈に迷う | 数値や具体例を使う |
 | **矛盾するルール** | 動作が不安定に | 優先順位を明確に |
 | **過度な制約** | 創造性を阻害 | バランスを考慮 |
 
-**🎯 成功の秘訣：** まず3個の重要なルールから始めて、徐々に洗練させる
+<br><br>
+
+**成功の秘訣：** まず3個の重要なルールから始めて、徐々に洗練させる
 
 <!--
 **説明者ノート：**
@@ -1219,12 +1409,14 @@ def fetch_user_data(
 - PDCAサイクルで改善
 -->
 ---
+<!-- _class: top-align -->
+<br>
 
 ## Cursor 1.0アップデート概要
 
 ### AIとの共同開発を進化させる
 
-#### 🚀 主要な新機能（2024年12月リリース）
+#### 主要な新機能（2024年12月リリース）
 
 | 機能 | 概要 | インパクト |
 |------|------|------------|
@@ -1233,13 +1425,19 @@ def fetch_user_data(
 | **Multi-Cursor (MCP)** | AI支援マルチカーソル | 一括編集の効率化 |
 | **Background Agent** | 非同期タスク実行 | 並行作業が可能に |
 
-#### 🎨 その他の改善
+---
+<!-- _class: top-align -->
+<br>
+
+#### その他の改善
 - Jupyter Notebook統合
 - リッチなChat応答（Mermaid図）
 - VS Code拡張機能の同期
 - パフォーマンス向上
 
-**💡 設計思想：** 「AIが開発者の意図を理解し、協働する」
+<br>
+
+**設計思想：** 「AIが開発者の意図を理解し、協働する」
 
 *出典: Cursor 1.0 リリース記事*
 
@@ -1254,7 +1452,7 @@ def fetch_user_data(
 
 ### GitHub PR自動レビュー
 
-#### 🐛 機能概要
+#### 機能概要
 **プルリクエストを自動的に分析し、潜在的な問題を発見する機能**
 
 #### できること
@@ -1264,31 +1462,39 @@ def fetch_user_data(
 | **改善提案** | より良い実装を提案 | パフォーマンス最適化 |
 | **規約チェック** | コーディング規約の確認 | 命名規則、フォーマット |
 
+---
+
 #### 動作例
-```markdown
-🤖 BugBot Review
 
-## ⚠️ 潜在的な問題:
-- **L23**: `user.profile.settings`でnullチェックが不十分
-  ```js
-  // 修正案
-  const settings = user?.profile?.settings || defaultSettings;
-  ```
+>BugBot Review
+>
+>## 潜在的な問題:
+>- **L23**: `user.profile.settings`でnullチェックが不十分
+>  ```js
+>  // 修正案
+>  const settings = user?.profile?.settings || defaultSettings;
+>  ```
+>
+>- **L45**: useEffectのクリーンアップ関数が未実装
+>  ```js
+>  useEffect(() => {
+>    const timer = setInterval(update, 1000);
+>    return () => clearInterval(timer); // 追加必要
+>  }, []);
+>  ```
+---
+<!-- _class: top-align -->
+<br>
 
-- **L45**: useEffectのクリーンアップ関数が未実装
-  ```js
-  useEffect(() => {
-    const timer = setInterval(update, 1000);
-    return () => clearInterval(timer); // 追加必要
-  }, []);
-  ```
+>
+>
+>## 改善提案:
+>- Optional chainingの使用を推奨
+>- エラーバウンダリの追加を検討
 
-## ✅ 改善提案:
-- Optional chainingの使用を推奨
-- エラーバウンダリの追加を検討
-```
+<br>
 
-**💡 メリット：** レビュアーの負担軽減＆品質向上
+**メリット：** レビュアーの負担軽減＆品質向上
 
 <!--
 **説明者ノート：**
@@ -1301,7 +1507,7 @@ def fetch_user_data(
 
 ### プロジェクト情報の記憶
 
-#### 🧠 機能概要
+#### 機能概要
 **プロジェクトの文脈や過去の決定事項を記憶し、一貫性のある提案を行う機能**
 
 #### 記憶する内容
@@ -1311,6 +1517,10 @@ def fetch_user_data(
 | **規約** | コーディングルール | コード生成時 |
 | **技術スタック** | 使用ライブラリ、バージョン | 依存関係管理 |
 | **過去の会話** | 重要な決定事項 | 継続的な開発 |
+
+---
+<!-- _class: top-align -->
+<br>
 
 #### 活用例
 ```
@@ -1324,7 +1534,9 @@ def fetch_user_data(
    → React.memoとuseMemoの使い分けを議論
 ```
 
-**🎯 効果：** 毎回同じ説明が不要に！
+<br>
+
+**効果：** 毎回同じ説明が不要に！
 
 <!--
 **説明者ノート：**
@@ -1332,12 +1544,14 @@ def fetch_user_data(
 - 長期プロジェクトで特に有効
 -->
 ---
+<!-- _class: top-align -->
+<br>
 
 ## Multi-Cursor (MCP)
 
 ### 複数箇所同時編集の進化
 
-#### 🎯 機能概要
+#### 機能概要
 **AIが類似パターンを認識し、複数箇所を賢く同時編集する機能**
 
 #### 従来との違い
@@ -1346,6 +1560,8 @@ def fetch_user_data(
 | **選択方法** | 手動で各箇所を選択 | AIが類似箇所を提案 |
 | **編集内容** | 同じ内容を入力 | 文脈に応じて変更 |
 | **スコープ認識** | なし | 変数スコープを理解 |
+
+---
 
 #### 使用例
 ```javascript
@@ -1361,7 +1577,9 @@ function processUser(usr) {  // usr → user
 }
 ```
 
-**💡 活用シーン：**
+<br>
+
+**活用シーン：**
 - リファクタリング
 - 命名規則の統一
 - パターンの一括適用
@@ -1372,12 +1590,14 @@ function processUser(usr) {  // usr → user
 - デモで違いを見せる
 -->
 ---
+<!-- _class: top-align -->
+<br>
 
 ## その他の新機能
 
 ### 開発体験の向上
 
-#### 📊 Jupyter Notebook統合
+#### Jupyter Notebook統合
 ```python
 # データ分析コードの自動生成
 @Code このデータを分析して可視化してください
@@ -1386,17 +1606,19 @@ function processUser(usr) {  // usr → user
 - 分析コードの最適化
 - 結果の解釈提案
 
-#### 💬 リッチなChat応答
+ ---
+
+#### リッチなChat応答
 - **Mermaid.js図表**: フローチャートやER図を自動生成
 - **コードハイライト**: より見やすい表示
 - **段階的説明**: 複雑な概念を分解して説明
 
-#### ⚙️ 設定・ダッシュボード改善
+#### 設定・ダッシュボード改善
 - より直感的なUI
 - 使用統計の可視化
 - チーム設定の簡素化
 
-#### 🚀 パフォーマンス向上
+#### パフォーマンス向上
 - 起動時間: **50%短縮**
 - メモリ使用量: **30%削減**
 - レスポンス速度: **2倍高速化**
@@ -1407,12 +1629,14 @@ function processUser(usr) {  // usr → user
 - 日々の開発体験が向上
 -->
 ---
+<!-- _class: top-align -->
+<br>
 
 ## Privacy Mode
 
 ### 機密情報の保護
 
-#### 🔒 機能概要
+#### 機能概要
 **コードがクラウドに送信されないローカル実行モード**
 
 #### Privacy Modeとは
@@ -1422,18 +1646,22 @@ function processUser(usr) {  // usr → user
 | **処理場所** | リモートサーバー | ローカルマシン |
 | **対応モデル** | すべて | 一部制限あり |
 
+---
+
 #### 有効化方法
 1. 設定 → Privacy
 2. "Privacy Mode"をON
 3. 必要に応じてファイル単位で設定
 
 #### 使用シーン
-- 🏢 顧客データを扱うコード
-- 🔐 社内システムの開発  
-- 💡 特許申請前のアルゴリズム
-- 💰 金融・医療系のシステム
+- 顧客データを扱うコード
+- 社内システムの開発  
+- 特許申請前のアルゴリズム
+- 金融・医療系のシステム
 
-**⚠️ 注意点：** 一部の高度な機能は制限される
+<br>
+
+**注意点：** 一部の高度な機能は制限される
 
 <!--
 **説明者ノート：**
@@ -1441,6 +1669,8 @@ function processUser(usr) {  // usr → user
 - 柔軟な設定が可能
 -->
 ---
+<!-- _class: top-align -->
+<br>
 
 ## モデルの選び方ガイド
 
@@ -1453,6 +1683,8 @@ function processUser(usr) {  // usr → user
 バランス → Gemini 2.5 Pro
 ```
 
+---
+
 #### 詳細な使い分け
 
 | 用途 | 推奨モデル | 理由 |
@@ -1464,7 +1696,9 @@ function processUser(usr) {  // usr → user
 | **リファクタリング** | Claude 3.5 | コード理解力 |
 | **ドキュメント作成** | Gemini 2.5 | 構造化が得意 |
 
-**💡 切り替えのコツ：**
+<br>
+
+**切り替えのコツ：**
 - タスクごとに最適なモデルを選択
 - 応答速度と品質のバランスを考慮
 - コストも意識して選択
@@ -1475,6 +1709,8 @@ function processUser(usr) {  // usr → user
 - デフォルトはGPT-4oで十分なことが多い
 -->
 ---
+<!-- _class: top-align -->
+<br>
 
 ## モデル比較表
 
@@ -1482,20 +1718,26 @@ function processUser(usr) {  // usr → user
 
 | モデル | 速度 | 品質 | コスト | 得意分野 |
 |--------|------|------|--------|----------|
-| **GPT-4o** | ⚡⚡⚡ | ⭐⭐⭐ | $ | 汎用・高速処理 |
-| **Claude 3.5 Sonnet** | ⚡⚡ | ⭐⭐⭐⭐⭐ | $$ | 複雑な推論・長文 |
-| **Claude 4** | ⚡⚡ | ⭐⭐⭐⭐⭐ | $$$ | 最高品質（制限あり） |
-| **Gemini 2.5 Pro** | ⚡⚡⚡ | ⭐⭐⭐⭐ | $ | マルチモーダル |
+| **GPT-4o** | ⚡︎⚡︎⚡︎ | ★★★ | $ | 汎用・高速処理 |
+| **Claude 3.5 Sonnet** | ⚡︎⚡︎ | ★★★★★ | $$ | 複雑な推論・長文 |
+| **Claude 4** | ⚡︎⚡︎ | ★★★★★ | $$$ | 最高品質（制限あり） |
+| **Gemini 2.5 Pro** | ⚡︎⚡︎⚡︎ | ★★★★★ | $ | マルチモーダル |
 
-#### 🔄 切り替え方法
+---
+<!-- _class: top-align -->
+<br>
+
+#### 切り替え方法
 チャット画面上部のモデル選択ボタンから変更
 
-#### 💰 コスト目安（月間）
+#### コスト目安（月間）
 - 軽度使用（補完中心）: $5-10
 - 中度使用（生成も活用）: $15-30  
 - 重度使用（常時利用）: $30-50
 
-**📊 使用統計：** ダッシュボードで確認可能
+<br>
+
+**使用統計：** ダッシュボードで確認可能
 
 <!--
 **説明者ノート：**
@@ -1503,12 +1745,14 @@ function processUser(usr) {  // usr → user
 - 用途に応じた使い分けが重要
 -->
 ---
+<!-- _class: top-align -->
+<br>
 
 ## Cursorの内部構成
 
 ### なぜ速いのか
 
-#### ⚙️ 技術的な工夫
+#### 技術的な工夫
 
 ```
 ユーザー入力
@@ -1524,7 +1768,11 @@ function processUser(usr) {  // usr → user
 [ストリーミング応答] ← 逐次表示
 ```
 
-#### 🚀 キーポイント
+---
+<!-- _class: top-align -->
+<br>
+
+#### キーポイント
 
 | 技術 | 説明 | 効果 |
 |------|------|------|
@@ -1533,7 +1781,9 @@ function processUser(usr) {  // usr → user
 | **キャッシュ活用** | 類似リクエストを記憶 | レスポンス向上 |
 | **並列処理** | 複数処理を同時実行 | 待ち時間短縮 |
 
-**💡 結果：** VSCode + AIプラグインより体感速度が速い
+<br>
+
+**結果：** VSCode + AIプラグインより体感速度が速い
 
 <!--
 **説明者ノート：**
@@ -1546,7 +1796,7 @@ function processUser(usr) {  // usr → user
 
 ### よくある問題と解決法
 
-#### 🔧 症状別対処法
+#### 症状別対処法
 
 | 症状 | 原因 | 解決方法 |
 |------|------|----------|
@@ -1555,12 +1805,18 @@ function processUser(usr) {  // usr → user
 | **エラーが発生** | 拡張機能競合 | • Cursor再起動<br>• 拡張機能を確認 |
 | **料金が高い** | 使いすぎ | • 使用モデルの見直し<br>• Privacy Mode活用 |
 
-#### 🆘 それでも解決しない場合
+---
+<!-- _class: top-align -->
+<br>
+
+#### それでも解決しない場合
 1. 公式ドキュメントを確認
 2. コミュニティフォーラムで質問
 3. GitHubでIssue報告
 
-**💡 予防のコツ：**
+<br>
+
+**予防のコツ：**
 - 定期的にアップデート
 - 拡張機能は最小限に
 - ログを確認する習慣
@@ -1571,6 +1827,8 @@ function processUser(usr) {  // usr → user
 - 大抵の問題には解決策がある
 -->
 ---
+<!-- _class: top-align -->
+<br>
 
 ## AI開発ツール全体マップ
 
@@ -1590,7 +1848,11 @@ function processUser(usr) {  // usr → user
     シンプル ← → 高機能
 ```
 
-#### 📊 ツールの特徴
+---
+<!-- _class: top-align -->
+<br>
+
+#### ツールの特徴
 
 | ツール | 自律性 | 機能性 | 主な用途 |
 |--------|--------|--------|----------|
@@ -1600,7 +1862,9 @@ function processUser(usr) {  // usr → user
 | **Cline** | 高 | 中 | 自動化タスク |
 | **Devin** | 最高 | 高 | 完全自動開発 |
 
-**🎯 Cursorの強み：** バランスの良さ
+<br>
+
+**Cursorの強み：** バランスの良さ
 
 <!--
 **説明者ノート：**
@@ -1624,7 +1888,11 @@ function processUser(usr) {  // usr → user
 
 ◎:優秀 ○:対応 △:限定的 ×:非対応
 
-#### 💡 選択基準
+---
+<!-- _class: top-align -->
+<br>
+
+#### 選択基準
 - **統合開発環境が欲しい** → Cursor
 - **VSCodeから離れたくない** → Copilot
 - **対話しながら開発** → Claude Code
@@ -1636,12 +1904,14 @@ function processUser(usr) {  // usr → user
 - Cursorの万能性を強調
 -->
 ---
+<!-- _class: top-align -->
+<br>
 
 ## 自走度と人の介在度
 
 ### どこまでAIに任せるか
 
-#### 🤖 ツール別の特徴
+#### ツール別の特徴
 ```
 人の介在度: 高 ← → 低
 Copilot → Cursor → Claude Code → Cline → Devin
@@ -1649,6 +1919,7 @@ Copilot → Cursor → Claude Code → Cline → Devin
 タスクサイズ: 小 ← → 大
 行単位 → 関数単位 → ファイル単位 → 機能単位 → プロジェクト
 ```
+---
 
 #### 使い分けマトリックス
 
@@ -1660,7 +1931,9 @@ Copilot → Cursor → Claude Code → Cline → Devin
 | **低** | 大 | Cline | 定型作業の自動化 |
 | **最低** | 最大 | Devin | プロトタイプ作成 |
 
-**🎯 Cursorの立ち位置：** 人とAIの協調
+<br>
+
+**Cursorの立ち位置：** 人とAIの協調
 
 <!--
 **説明者ノート：**
@@ -1668,12 +1941,14 @@ Copilot → Cursor → Claude Code → Cline → Devin
 - 制御と効率のバランスが重要
 -->
 ---
+<!-- _class: top-align -->
+<br>
 
 ## 適材適所
 
 ### ツールの使い分け指針
 
-#### 🎯 シーン別おすすめ
+#### シーン別おすすめ
 
 | シーン | おすすめ | 理由 |
 |--------|----------|------|
@@ -1683,7 +1958,11 @@ Copilot → Cursor → Claude Code → Cline → Devin
 | **新規開発の丸投げ** | Devin | 要件から実装まで |
 | **既存IDEを変えたくない** | Copilot | プラグインとして導入 |
 
-#### 💼 組織での導入指針
+---
+<!-- _class: top-align -->
+<br>
+
+#### 組織での導入指針
 ```
 個人開発者 → Cursor（コスパ最高）
 小規模チーム → Cursor Business
@@ -1691,7 +1970,9 @@ Copilot → Cursor → Claude Code → Cline → Devin
 研究開発 → Devin（実験的利用）
 ```
 
-**🔄 併用もアリ：** Cursor + Copilotなど
+<br>
+
+**併用もアリ：** Cursor + Copilotなど
 
 <!--
 **説明者ノート：**
@@ -1699,19 +1980,25 @@ Copilot → Cursor → Claude Code → Cline → Devin
 - 状況に応じて使い分ける柔軟性
 -->
 ---
+<!-- _class: top-align -->
+<br>
 
 ## 本日のまとめ
 
 ### Cursorで変わる開発体験
 
-#### ✅ 学んだこと
+#### 学んだこと
 - **基本機能**（Tab、Ctrl+K、Chat、@記号）
 - **Rulesによるカスタマイズ** - AIを自分専用に
 - **Cursor 1.0の新機能** - さらなる効率化
 - **実践的な活用方法** - プロ級の使い方
 - **他ツールとの使い分け** - 適材適所
 
-#### 🚀 次のアクション
+---
+<!-- _class: top-align -->
+<br>
+
+#### 次のアクション
 | タイミング | アクション | 目標 |
 |------------|------------|------|
 | **今日** | Cursorをインストール | 環境構築 |
@@ -1719,7 +2006,11 @@ Copilot → Cursor → Claude Code → Cline → Devin
 | **来週** | Rulesを設定してみる | 自分好みに |
 | **来月** | チームに展開を検討 | 生産性向上 |
 
-### 💪 Let's start AI-powered coding!
+<br>
+
+### Let's start AI-powered coding!
+
+<br>
 
 **最後のメッセージ：** AIは怖くない、強い味方です！
 
