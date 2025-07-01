@@ -1,6 +1,6 @@
 ---
 marp: true
-theme: gaia
+theme: corporate-blue-green
 header: "AI駆動開発勉強会 Women's Base"
 footer: "2025.07.05"
 ---
