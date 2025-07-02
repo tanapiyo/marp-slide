@@ -31,14 +31,14 @@
 section {
   width: 1280px;
   height: 720px;
-  font-size: 32px;
+  font-size: 24px;
   font-family: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   padding: 60px 80px;
   display: flex;
   flex-direction: column;
-  line-height: 1.2;
+  line-height: 1;
 }
 
 /* ヘッダー・フッター */
@@ -76,20 +76,22 @@ section::after {
 
 /* 見出しスタイル */
 h1 {
-  font-size: 56px;
+  font-size: 44px;
   font-weight: 700;
   color: var(--primary-dark-blue);
   margin: 0 0 40px 0;
-  padding-bottom: 20px;
   border-bottom: 4px solid var(--primary-light-blue);
   line-height: 1.2;
+  position: absolute;
+  top: 60px;
+  left: 80px;
 }
 
 h2 {
   font-size: 44px;
   font-weight: 600;
   color: var(--primary-dark-blue);
-  margin: 20px 0 10px 0;
+  margin: 30px 0 10px 0;
   line-height: 1.2;
 }
 
@@ -107,7 +109,7 @@ h4 {
   font-size: 28px;
   font-weight: 500;
   color: var(--text-primary);
-  margin: 10px 0 0px 0;
+  margin: 5px 0;
 }
 
 /* 段落・テキスト */
@@ -135,7 +137,7 @@ ul, ol {
 }
 
 li {
-  margin: 8px 0;
+  margin: 2px 0;
 }
 
 ul > li::marker {
@@ -178,7 +180,7 @@ p code, li code {
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 20px 0;
+  margin: 10px 0;
   font-size: 28px;
 }
 
@@ -199,15 +201,6 @@ tr:nth-child(even) {
   background-color: var(--extra-pale-blue);
 }
 
-/* 引用 */
-blockquote {
-  border-left: 5px solid var(--primary-light-green);
-  background-color: var(--extra-pale-green);
-  padding: 20px 30px;
-  margin: 20px 0;
-  font-style: italic;
-  color: var(--text-secondary);
-}
 
 /* リンク */
 a {
@@ -254,6 +247,7 @@ section.title h2 {
   color: var(--text-light);
   font-size: 36px;
   font-weight: 400;
+  font-size: 64px;
 }
 
 /* セクション区切りスライド */
@@ -407,4 +401,22 @@ ul.icon-list li::before {
 
 .fade-in {
   animation: fadeIn 0.5s ease-out;
+}
+
+
+blockquote {
+  border-top: 0.1em dashed var(--black);
+  font-size: var(--mini-font-size);
+  width: 100%;
+  width: 90%;
+  position: absolute;
+  bottom: 30px;
+  padding-left: 0px;
+}
+
+blockquote::before {
+  display: none;
+}
+blockquote::after {
+  display: none;
 }
